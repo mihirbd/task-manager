@@ -2,10 +2,8 @@ package com.pixel.taskmanager.entity;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
+import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @Entity
@@ -32,5 +30,26 @@ public class Employee extends BaseEntity {
 
     @Column(name = "organization", nullable = false)
     private String organization;
+
+
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
+    @JoinTable(
+            name = "employee_project",
+            joinColumns = @JoinColumn(name = "employee_id"),
+            inverseJoinColumns = @JoinColumn(name = "project_id")
+    )
+    private Set<Project> project;
+
+
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
+    @JoinTable(
+            name = "employee_team",
+            joinColumns = @JoinColumn(name = "employee_id"),
+            inverseJoinColumns = @JoinColumn(name = "team_id")
+    )
+    private Set<Team> team;
+
+
+
 }
 

@@ -11,7 +11,7 @@ import java.util.Set;
 
 public class Team extends BaseEntity{
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
     @JoinTable(
         name = "team_project",
         joinColumns = @JoinColumn(name = "team_id"),
