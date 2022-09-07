@@ -1,9 +1,12 @@
 package com.pixel.taskmanager.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
 @MappedSuperclass
+@Data
 public abstract class BaseEntity implements Serializable {
     private static final long  serialVersionUID= -1293869748369245789L;
     @Id

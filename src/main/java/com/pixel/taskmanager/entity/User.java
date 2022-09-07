@@ -4,10 +4,10 @@ import lombok.Data;
 
 import javax.persistence.*;
 
-@Entity
 @Data
-@Table(name="user")
-//@UniqueConstraint(columnNames = new String("user_name") )
+@Entity
+@Table(name="user", uniqueConstraints={@UniqueConstraint(columnNames = {"user_name"})}
+)
 public class User extends BaseEntity{
 
     @Column(name = "user_name", nullable = false, unique = true)
