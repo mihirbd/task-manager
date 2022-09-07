@@ -1,15 +1,17 @@
 package com.pixel.taskmanager.enums;
 
-public enum TaskType {
+public enum Linktype {
 
-    STORY(1,"Story"),
-    BUG(2,"Bug"),
-    TASK(3,"Task");
+
+    BLOCK(1,"Block"),
+    CLONE(2,"Clone"),
+    RELATE(3,"Relate"),
+    DUPLICATE(4,"Duplicate");
 
     private final int id;
     private  final String name;
 
-    private TaskType(int id, String name){
+    private Linktype(int id, String name){
         this.name=name;
         this.id=id;
     }
@@ -20,5 +22,4 @@ public enum TaskType {
     public int getId() {
         return id;
     }
-
 }

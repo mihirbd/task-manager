@@ -33,7 +33,7 @@ public class Task  extends BaseEntity{
     @Column(name = "label", nullable = false)
     private String label;
 
-    @Column(name = "story_point", nullable = false)
+    @Column(name = "story_point")
     private String story_point;
 
     @ManyToOne(cascade = CascadeType.REFRESH)
@@ -43,4 +43,10 @@ public class Task  extends BaseEntity{
     @Size(max = 5242880, message = "Maximum 5242880 kb allowed")
     @Column(name = "attachment", columnDefinition = "mediumblob")
     private String attachment;
+
+    @Column(name = "link_type")
+    private String link_type;
+
+    @OneToOne
+    private Task linkedIssue;
 }
