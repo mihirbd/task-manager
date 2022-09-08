@@ -19,4 +19,14 @@ public enum ProjectType {
     public int getId() {
         return id;
     }
+
+    public String getNameById(int id){
+
+        for(ProjectType PT: values()){
+            if(PT.getId()==id){
+                return PT.getName();
+            }
+        }
+        return "";
+    }
 }

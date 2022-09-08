@@ -1,5 +1,7 @@
 package com.pixel.taskmanager.enums;
 
+import java.util.Arrays;
+
 public enum Department {
 
     MARKETING(1,"Marketing"),
@@ -19,6 +21,16 @@ public enum Department {
     }
     public int getId() {
         return id;
+    }
+
+    public String getNameById(int id){
+
+        for(Department dep: values()){
+            if(dep.getId()==id){
+                return dep.getName();
+            }
+        }
+        return "";
     }
 
 

@@ -22,4 +22,15 @@ public enum Designation {
         return id;
     }
 
+
+    public String getNameById(int id){
+
+        for(Designation dep: values()){
+            if(dep.getId()==id){
+                return dep.getName();
+            }
+        }
+        return "";
+    }
+
 }

@@ -23,4 +23,14 @@ public enum TaskStatus {
         return id;
     }
 
+    public String getNameById(int id){
+
+        for(TaskStatus TS: values()){
+            if(TS.getId()==id){
+                return TS.getName();
+            }
+        }
+        return "";
+    }
+
 }

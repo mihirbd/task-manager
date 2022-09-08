@@ -22,4 +22,15 @@ public enum Linktype {
     public int getId() {
         return id;
     }
+
+
+    public String getNameById(int id){
+
+        for(Linktype dep: values()){
+            if(dep.getId()==id){
+                return dep.getName();
+            }
+        }
+        return "";
+    }
 }

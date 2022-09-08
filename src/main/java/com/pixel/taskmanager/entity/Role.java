@@ -10,10 +10,11 @@ import java.time.LocalDateTime;
 
 @Entity
 @Data
-@Table(name = "role", uniqueConstraints={@UniqueConstraint(columnNames = {"username"})})
+@Table(name = "role")
 public class Role extends BaseEntity{
 
-    @Column(name = "name", nullable = false)
-    private LocalDateTime name;
+
+    @Column(name = "name", nullable = false, unique = true)
+    private String name;
 
 }
