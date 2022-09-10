@@ -20,5 +20,14 @@ public enum TaskType {
     public int getId() {
         return id;
     }
+    public String getNameById(int id){
+
+        for(TaskType TT: values()){
+            if(TT.getId()==id){
+                return TT.getName();
+            }
+        }
+        return "";
+    }
 
 }

@@ -49,6 +49,9 @@ public class Employee extends BaseEntity {
     )
     private Set<Team> team;
 
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
+    private Employee supervisor;
+
 
 
 }

@@ -17,5 +17,8 @@ public abstract class BaseEntity implements Serializable {
     @Column(name = "is_active", nullable = false)
     private boolean is_Active;
 
+    @Column(name = "is_approved", nullable = false)
+    private boolean is_approved;
+
 
 }
